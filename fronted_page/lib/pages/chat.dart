@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fronted_page/pages/chat_page.dart';
 
 class Chat extends StatefulWidget {
   const Chat({super.key});
@@ -11,158 +12,118 @@ class _ChatState extends State<Chat> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff703eff),
-      body: SafeArea(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+         iconTheme: const IconThemeData(
+    color: Colors.white, // arrow button white
+  ),
+        title: const Text(
+          "CHATS",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 22,
+          ),
+        ),
+      ),
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        decoration: const BoxDecoration(color: Colors.white),
         child: Container(
-          margin: const EdgeInsets.only(top: 5),
+         
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 20),
               Row(
                 children: [
-                  Image.asset(
-                    "images/wave.png",
-                    height: 40,
-                    width: 40,
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  const Text(
-                    "Hello,",
-                    style: TextStyle(
-                      fontSize: 24,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
+                  Expanded(
+                    child: Container(
+                      margin: const EdgeInsets.only(left: 20,right: 20),
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 216, 215, 215),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: const TextField(
+                        decoration: InputDecoration(
+                          hintText: "Search or start new chat..",
+                          border: InputBorder.none,
+                          prefixIcon: Icon(Icons.search),
+                          contentPadding: EdgeInsets.symmetric(vertical: 12),
+                        ),
+                      ),
                     ),
                   ),
-                  const SizedBox(
-                    width: 5,
-                  ),
-                  const Text(
-                    "Surya",
-                    style: TextStyle(
-                      fontSize: 24,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const Spacer(),
-                  Container(
-                    padding: const EdgeInsets.all(5),
-                    margin: const EdgeInsets.only(right: 20),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Material(
+                elevation: 3.0,
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.white,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ChatPage()));
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    margin: const EdgeInsets.only(left: 10, right: 10),
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10)),
-                    child: const Icon(
-                      Icons.person,
-                      color: Color(0xff703eff),
-                      size: 30,
-                    ),
-                  )
-                ],
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const Text(
-                "Welcome To",
-                style: TextStyle(
-                  fontSize: 24,
-                  color: Color.fromARGB(197, 255, 255, 255),
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const Text(
-                "ChatUp",
-                style: TextStyle(
-                  fontSize: 32,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Expanded(
-                child: Container(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
-                  width: MediaQuery.of(context).size.width,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(30),
-                        topRight: Radius.circular(30)),
-                  ),
-                  child: Column(
-                    children: [
-                      const SizedBox(
-                        height: 30,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                            color: const Color(0xffececf8),
-                            borderRadius: BorderRadius.circular(10)),
-                        child: const TextField(
-                          decoration: InputDecoration(
-                              border: InputBorder.none,
-                              prefixIcon: Icon(Icons.search),
-                              hintText: "Search Username..."),
+                    width: MediaQuery.of(context).size.width,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ClipRRect(
+                            borderRadius: BorderRadius.circular(60),
+                            child: Image.asset(
+                              "images/boy.jpeg",
+                              height: 70,
+                              width: 70,
+                              fit: BoxFit.cover,
+                            )),
+                        const SizedBox(
+                          width: 10,
                         ),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Container(
-                        decoration: const BoxDecoration(
-                          color: Colors.white,
-                        ),
-                        child: Row(
+                        const Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            ClipRRect(
-                                borderRadius: BorderRadius.circular(60),
-                                child: Image.asset(
-                                  "images/boy.jpeg",
-                                  height: 70,
-                                  width: 70,
-                                  fit: BoxFit.cover,
-                                )),
-                               const SizedBox(
-                                 width: 15,
-                                ),
-                           const Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Surya Chauhan",
-                                  style: TextStyle(
-                                    fontSize: 22,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(left: 10),
-                                  child: Text(
-                                    "Hello, How are you?",
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      color: Color.fromARGB(151, 0, 0, 0),
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                ),
-                              ],
+                            SizedBox(
+                              height: 10,
                             ),
-                            
+                            Text(
+                              "Surya Chauhan",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              "Hey! What are you doing?",
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 114, 114, 114),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500),
+                            )
                           ],
                         ),
-                        
-                      )
-                    ],
+                        const Spacer(),
+                        const Text(
+                          "2:00 PM",
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 114, 114, 114),
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
                   ),
                 ),
-              ),
+              )
             ],
           ),
         ),

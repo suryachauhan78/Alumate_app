@@ -23,7 +23,7 @@ class _BottomnavigationState extends State<Bottomnavigation> {
   late Home home;
   late Chat chat;
   late Add add;
-late Message message;
+late NotificationPage message;
   late Profile profile;
   @override
   void initState() {
@@ -31,7 +31,7 @@ late Message message;
     home = const Home();
     chat = const Chat();
     add = const Add();
-    message = const Message();
+    message =  NotificationPage();
     profile = const Profile();
 
     pages = [home, chat, add,message, profile];

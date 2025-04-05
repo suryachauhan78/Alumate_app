@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fronted_page/pages/alumuni.dart';
+import 'package:fronted_page/pages/posts.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -121,45 +123,63 @@ class _HomeState extends State<Home> {
          ),
          Row(
            children: [
-             Container(
-              margin: const  EdgeInsets.only(left: 5),
-              padding:const  EdgeInsets.only(left: 20,right: 20),
-              height: 97,
-              width: 112,
-              decoration:  BoxDecoration(
-                border: Border.all(
-              color: const Color.fromARGB(255, 240, 211, 115), // Border color
-              width: 3.0,         // Border width
-            ),
-                color:   const Color.fromARGB(255, 205, 203, 203),borderRadius: BorderRadius.circular(20)
-              ),
-              child: Column(
-                children: [
-                  Center(child: Image.asset("images/student.png",height: 53,width: 58,color: Colors.amber[300],)),
-                 const SizedBox(height: 5,),
-                 const Text("Alumuni",style: TextStyle(color: Colors.black,fontSize: 20),)
-                ],
-              ),
+             GestureDetector(
+               
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>  AlumniListPage()));
+                          },
+               child: Container(
+                margin: const  EdgeInsets.only(left: 5),
+                padding:const  EdgeInsets.only(left: 20,right: 20),
+                height: 97,
+                width: 112,
+                decoration:  BoxDecoration(
+                  border: Border.all(
+                color: const Color.fromARGB(255, 240, 211, 115), // Border color
+                width: 3.0,         // Border width
+                           ),
+                  color:   const Color.fromARGB(255, 205, 203, 203),borderRadius: BorderRadius.circular(20)
+                ),
+                child: Column(
+                  children: [
+                    Center(child: Image.asset("images/student.png",height: 53,width: 58,color: Colors.amber[300],)),
+                   const SizedBox(height: 5,),
+                   const Text("Alumuni",style: TextStyle(color: Colors.black,fontSize: 20),)
+                  ],
+                ),
+               ),
              ),
-             Container(
-              margin: const  EdgeInsets.only(left: 5),
-              padding:const  EdgeInsets.only(left: 20,right: 20),
-              height: 97,
-              width: 112,
-              decoration:  BoxDecoration(
-                border: Border.all(
-              color: Colors.blue, // Border color
-              width: 3.0,         // Border width
-            ),
-                color: const Color.fromARGB(255, 205, 203, 203),borderRadius: BorderRadius.circular(20)
-              ),
-              child: Column(
-                children: [
-                  Center(child: Image.asset("images/laptop.png",height: 53,width: 58,color: Colors.blue,)),
-                 const SizedBox(height: 5,),
-                 const Text("Post",style: TextStyle(color: Colors.black,fontSize: 20),)
-                ],
-              ),
+             GestureDetector(
+             onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>  PostPage()));
+                          
+              },
+               child: Container(
+                margin: const  EdgeInsets.only(left: 5),
+                padding:const  EdgeInsets.only(left: 20,right: 20),
+                height: 97,
+                width: 112,
+                decoration:  BoxDecoration(
+                  border: Border.all(
+                color: Colors.blue, // Border color
+                width: 3.0,         // Border width
+                           ),
+                  color: const Color.fromARGB(255, 205, 203, 203),borderRadius: BorderRadius.circular(20)
+                ),
+                child: Column(
+                  children: [
+                    Center(child: Image.asset("images/laptop.png",height: 53,width: 58,color: Colors.blue,)),
+                   const SizedBox(height: 5,),
+                   const Text("Post",style: TextStyle(color: Colors.black,fontSize: 20),)
+                  ],
+                ),
+               ),
              ),
              Container(
               margin: const  EdgeInsets.only(left: 5),
