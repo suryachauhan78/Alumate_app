@@ -1,2 +1,0 @@
-D:/Alumate_app/Alumate_app/fronted_page/android/app/.cxx/Debug/3j5x2934/x86/CMakeFiles/edit_cache.dir
-D:/Alumate_app/Alumate_app/fronted_page/android/app/.cxx/Debug/3j5x2934/x86/CMakeFiles/rebuild_cache.dir
