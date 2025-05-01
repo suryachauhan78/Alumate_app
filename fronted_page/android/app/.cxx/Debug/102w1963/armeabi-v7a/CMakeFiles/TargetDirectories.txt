@@ -1,0 +1,2 @@
+C:/Users/dipes/StudioProjects/Alumate_app/fronted_page/android/app/.cxx/Debug/102w1963/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/dipes/StudioProjects/Alumate_app/fronted_page/android/app/.cxx/Debug/102w1963/armeabi-v7a/CMakeFiles/rebuild_cache.dir
